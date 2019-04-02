@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package stateUpdate;
+
+//Define o serviço que o servidor irá gerenciar
+service Greeter {
+    //Criando método rpc que recebe um request e retorna um reply
+    rpc SayHello (HelloRequest) returns (HelloReply) {}
+}
+
+//A mensagem de request contém o nome de usuário
+message HelloRequest {
+    string name = 1;
+}
+
+//Mensagem de resposta contém a saudação
+message HelloReply {
+    string message = 1;
+}
