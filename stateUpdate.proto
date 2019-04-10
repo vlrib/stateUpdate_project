@@ -1,0 +1,36 @@
+syntax = "proto3";
+package stateUpdate;
+
+//Define o serviço que o servidor irá gerenciar
+service Greeter {
+    // Método para criar projeto
+    rpc CreateProject (ProjectRequest) returns (ProjectResponse) {}
+
+    // Método para buscar projetos
+    rpc GetProject (SearchRequest) returns (SearchResponse) {}
+
+    
+}
+
+message ProjectRequest {
+    string Id = 1;
+    string Name = 2;
+    string Status = 3;
+}
+
+message ProjectResponse {
+    bool success = 1;
+    string message = 2;
+}
+
+message SearchRequest {
+    string Name = 1;
+}
+
+message SearchResponse {
+    bool Find = 1;
+    string Id = 2;
+    string Name = 3;
+    string Status = 4;
+    string Message = 5;
+}
